@@ -9,7 +9,6 @@ import {
   Sparkles, 
   Calendar,
   Clock,
-  DollarSign,
   ArrowRight,
   Shield,
   Heart,
@@ -217,9 +216,7 @@ export default function HomePage() {
                   animate="show"
                   className="p-0"
                 >
-                  <motion.div variants={itemFadeUp} className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-600/10 text-emerald-800 border border-emerald-600/20 mb-6">
-                    Dermatologist‑approved skincare
-                  </motion.div>
+                  
                   <motion.h1
                     variants={itemFadeUp}
                     className="text-4xl sm:text-6xl font-bold leading-tight tracking-tight"
@@ -235,7 +232,7 @@ export default function HomePage() {
                   </motion.p>
                   <motion.div
                     variants={itemFadeUp}
-                    className="mt-8 flex flex-col sm:flex-row gap-4"
+                    className="mt-8 flex flex-col  gap-4"
                   >
                     <Link href="/services">
                       <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-base px-7 py-6 rounded-full">
@@ -429,7 +426,6 @@ export default function HomePage() {
                               className="flex items-center bg-emerald-500/80 px-2 py-1 rounded-full backdrop-blur-sm"
                               whileHover={{ scale: 1.1 }}
                             >
-                              <DollarSign className="w-4 h-4 mr-1" />
                               <span className="text-sm font-bold">{service.price}</span>
                             </motion.div>
                           </div>
