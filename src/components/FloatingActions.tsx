@@ -3,7 +3,7 @@
 import { useState } from "react";
 import type { SVGProps } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, X, MessageCircle } from "lucide-react";
+import { Phone, X } from "lucide-react";
 
 // Update these to your preferred numbers
 const PHONE_E164 = "+27727389214"; // South Africa +27
@@ -39,7 +39,7 @@ export default function FloatingActions() {
 
   return (
     <div className="fixed right-5 bottom-6 z-50 select-none">
-      {/* Expanded actions */}
+  {/* Expanded actions */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -47,7 +47,7 @@ export default function FloatingActions() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
-            className="mb-3 flex flex-col items-end gap-3"
+    className="mb-3 flex flex-col items-end gap-3"
           >
             {items.map(({ id, href, label, color, Icon, target }) => (
               <motion.a
@@ -55,13 +55,13 @@ export default function FloatingActions() {
                 href={href}
                 target={target}
                 rel={target === "_blank" ? "noopener noreferrer" : undefined}
-                className={`group shadow-lg hover:shadow-xl transition-all rounded-full px-3 py-2 flex items-center gap-2 bg-white text-gray-900 border border-gray-200 hover:bg-gray-100`}
-                whileHover={{ y: -2 }}
+        aria-label={label}
+        className="group transition-transform p-2 flex items-center justify-center text-emerald-600 hover:text-emerald-700 focus:outline-none"
+        whileHover={{ y: -2, scale: 1.12 }}
                 onClick={() => setOpen(false)}
               >
-                <Icon className="w-5 h-5" />
-                <span className="text-sm font-medium hidden sm:inline">{label}</span>
-                <span className="sm:hidden sr-only">{label}</span>
+        <Icon className="w-6 h-6" />
+        <span className="sr-only">{label}</span>
               </motion.a>
             ))}
           </motion.div>
