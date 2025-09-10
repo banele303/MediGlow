@@ -117,7 +117,7 @@ export default function HomePage() {
               transition={{ delay: 0.5, duration: 1 }}
             >
               Experience hospitality reimagined through cutting-edge technology, 
-              quantum computing, and AI-powered personalization in the world's 
+              quantum computing, and AI-powered personalization in the world&apos;s 
               most advanced luxury hotel.
             </motion.p>
 
@@ -271,7 +271,7 @@ export default function HomePage() {
                       ))}
                     </div>
                     <p className="text-white/80 text-lg leading-relaxed italic">
-                      "{testimonial.content}"
+                      &quot;{testimonial.content}&quot;
                     </p>
                     <div className="border-t border-white/20 pt-6">
                       <p className="font-semibold text-white text-lg">{testimonial.name}</p>

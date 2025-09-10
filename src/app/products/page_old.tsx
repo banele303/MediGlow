@@ -1,6 +1,4 @@
 "use client";
-
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -167,7 +165,7 @@ export default function ProductsPageOld() {
             <p className="text-gray-600">
               Showing <span className="font-semibold text-emerald-600">{searchedProducts.length}</span> products
               {searchQuery && (
-                <span> for "<span className="font-semibold">{searchQuery}</span>"</span>
+                <span> for &quot;<span className="font-semibold">{searchQuery}</span>&quot;</span>
               )}
             </p>
           </div>

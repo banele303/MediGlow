@@ -638,7 +638,7 @@ export default function ProductsPage() {
             <p className="text-gray-600">
               Showing <span className="font-semibold text-emerald-600">{searchedProducts.length}</span> products
               {searchQuery && (
-                <span> for "<span className="font-semibold">{searchQuery}</span>"</span>
+                <span> for &quot;<span className="font-semibold">{searchQuery}</span>&quot;</span>
               )}
             </p>
           </motion.div>
@@ -732,7 +732,7 @@ export default function ProductsPage() {
                           ease: "easeInOut"
                         }}
                       />
-                    </div>
+                    {/* keep overlays within the relative container */}
                       
                       {/* Badges */}
                       {/* Badges */}
