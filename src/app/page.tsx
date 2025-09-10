@@ -232,11 +232,11 @@ export default function HomePage() {
                   </motion.p>
                   <motion.div
                     variants={itemFadeUp}
-                    className="mt-8 flex flex-col  gap-4"
+                    className="mt-8 flex flex-col-2   gap-4"
                   >
                     <Link href="/services">
                       <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-base px-3 md:px-7 py-6 rounded-full">
-                        Explore Services
+                   Services
                       </Button>
                     </Link>
                     <Link href="#contact">
