@@ -140,7 +140,7 @@ export default function GalleryPage() {
                             {/* Use native video for preview with poster */}
                             <video
                               className="w-full h-full object-cover"
-                              poster={(item as any).poster}
+                              poster={item.poster}
                               muted
                               preload="metadata"
                             />
@@ -216,7 +216,7 @@ export default function GalleryPage() {
                     <video
                       controls
                       className="w-full h-full object-contain"
-                      poster={(active as any).poster}
+                      poster={active.poster}
                       autoPlay
                     >
                       <source src={active.src} />
