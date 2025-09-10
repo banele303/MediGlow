@@ -23,7 +23,6 @@ import {
   Flame,
   Crown,
   Gift,
-  TrendingUp,
   Users,
   Clock,
   Truck,
@@ -56,7 +55,7 @@ const products = [
     newProduct: false,
     icon: Droplets,
     image: "/algae.jpg",
-    description: "A gentle yet effective foam cleanser that removes impurities while maintaining skin's natural moisture barrier.",
+  description: "A gentle yet effective foam cleanser that removes impurities while maintaining skin&apos;s natural moisture barrier.",
     benefits: [
       "Removes makeup and impurities",
       "Maintains skin moisture",
@@ -80,7 +79,7 @@ const products = [
     newProduct: false,
     icon: Sun,
     image: "/algae2.jpg",
-    description: "High-potency vitamin C serum that brightens, protects, and stimulates collagen production for radiant skin.",
+  description: "High-potency vitamin C serum that brightens, protects, and stimulates collagen production for radiant skin.",
     benefits: [
       "Brightens skin tone",
       "Reduces dark spots",
@@ -104,7 +103,7 @@ const products = [
     newProduct: true,
     icon: Droplets,
     image: "/algae3.jpg",
-    description: "Lightweight moisturizer with multiple types of hyaluronic acid for deep, long-lasting hydration.",
+  description: "Lightweight moisturizer with multiple types of hyaluronic acid for deep, long-lasting hydration.",
     benefits: [
       "Deep hydration",
       "Plumps fine lines",
@@ -128,7 +127,7 @@ const products = [
     newProduct: false,
     icon: Moon,
     image: "/algae-peel.jpg",
-    description: "Advanced retinol treatment that reduces fine lines, improves texture, and promotes cell turnover.",
+  description: "Advanced retinol treatment that reduces fine lines, improves texture, and promotes cell turnover.",
     benefits: [
       "Reduces fine lines",
       "Improves skin texture",
@@ -152,7 +151,7 @@ const products = [
     newProduct: false,
     icon: Shield,
     image: "/alagepels2.jpg",
-    description: "Lightweight, non-greasy sunscreen with broad spectrum SPF 50 protection and antioxidants.",
+  description: "Lightweight, non-greasy sunscreen with broad spectrum SPF 50 protection and antioxidants.",
     benefits: [
       "SPF 50 protection",
       "Antioxidant rich",
@@ -176,7 +175,7 @@ const products = [
     newProduct: true,
     icon: Zap,
     image: "/algaepel.jpg",
-    description: "Concentrated niacinamide serum that minimizes pores, controls oil, and improves skin texture.",
+  description: "Concentrated niacinamide serum that minimizes pores, controls oil, and improves skin texture.",
     benefits: [
       "Minimizes pores",
       "Controls oil production",
@@ -200,7 +199,7 @@ const products = [
     newProduct: false,
     icon: Sparkles,
     image: "/aesthetic.jpg",
-    description: "Rich eye cream with peptides and caffeine to reduce puffiness, dark circles, and fine lines.",
+  description: "Rich eye cream with peptides and caffeine to reduce puffiness, dark circles, and fine lines.",
     benefits: [
       "Reduces puffiness",
       "Diminishes dark circles",
@@ -224,7 +223,7 @@ const products = [
     newProduct: false,
     icon: Leaf,
     image: "/neww.jpg",
-    description: "Gentle exfoliating toner with AHA and BHA to remove dead skin cells and unclog pores.",
+  description: "Gentle exfoliating toner with AHA and BHA to remove dead skin cells and unclog pores.",
     benefits: [
       "Gentle exfoliation",
       "Unclogs pores",
@@ -645,7 +644,7 @@ export default function ProductsPage() {
             <p className="text-gray-600">
               Showing <span className="font-semibold text-emerald-600">{searchedProducts.length}</span> products
               {searchQuery && (
-                <span> for "<span className="font-semibold">{searchQuery}</span>"</span>
+                <span> for &quot;<span className="font-semibold">{searchQuery}</span>&quot;</span>
               )}
             </p>
           </motion.div>

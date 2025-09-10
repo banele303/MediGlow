@@ -45,7 +45,7 @@ const testimonials = [
   {
     name: "Dr. Sarah Chen",
     role: "Tech Innovator",
-    content: "The most incredible hotel experience I've ever had. The future is now!",
+  content: "The most incredible hotel experience I&apos;ve ever had. The future is now!",
     rating: 5
   },
   {
