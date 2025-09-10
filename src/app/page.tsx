@@ -7,14 +7,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { 
   Sparkles, 
-  Star, 
   Calendar,
   Clock,
   DollarSign,
   ArrowRight,
   Shield,
   Heart,
-  Zap,
   Award
 } from "lucide-react";
 import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
@@ -64,26 +62,7 @@ const homeServices = [
   }
 ];
 
-const testimonials = [
-  {
-    name: "Sarah Johnson",
-    role: "Regular Client",
-    content: "My skin has never looked better! The team is professional and the results are amazing.",
-    rating: 5
-  },
-  {
-    name: "Emily Chen",
-    role: "Beauty Enthusiast",
-    content: "The facial treatments here are transformative. I always leave feeling refreshed.",
-    rating: 5
-  },
-  {
-    name: "Maria Rodriguez",
-    role: "Skincare Lover",
-    content: "Outstanding service and incredible results. This place is a hidden gem!",
-    rating: 5
-  }
-];
+// (removed unused testimonials array)
 
 // Media used in the "Amazing Results" section — mix of real images and videos from /public
 const resultsMedia: Array<
@@ -167,6 +146,7 @@ function LazyVideo({
       muted={muted}
       loop={loop}
       autoPlay={autoPlay}
+  {...props}
     />
   );
 }
@@ -537,7 +517,7 @@ export default function HomePage() {
             className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
             {resultsMedia.map((item, index) => (
-              <motion.div key={(item as any).src} variants={itemFadeUp} className="group">
+              <motion.div key={item.src} variants={itemFadeUp} className="group">
                 <div className="relative overflow-hidden rounded-2xl shadow-lg">
                   <div className="relative aspect-[4/3]">
                     {item.type === "image" ? (
