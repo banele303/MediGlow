@@ -322,7 +322,7 @@ export default function HomePage() {
                   >
                     <Link href="/services">
                       <motion.div className="relative group inline-block" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                        <Button size="lg" className="relative overflow-hidden bg-emerald-500 hover:bg-emerald-600 text-white text-base px-4 md:px-7 py-6 rounded-full shadow-xl">
+                        <Button size="lg" className="relative overflow-hidden bg-emerald-500 hover:bg-emerald-600 text-white text-base px-4 md:px-7 py-4 md:py-6 rounded-full shadow-xl">
                           {/* Animated shine */}
                           <motion.div
                             className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0"
@@ -335,7 +335,7 @@ export default function HomePage() {
                       </motion.div>
                     </Link>
                     <Link href="#contact">
-                      <Button variant="outline" size="lg" className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 text-base px-4 md:px-7 py-6 rounded-full">
+                      <Button variant="outline" size="lg" className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 text-base px-4 md:px-7 py-4 md:py-6 rounded-full">
                         Book a Consultation
                       </Button>
                     </Link>
