@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, MessageCircle, X } from "lucide-react";
+import { Phone, X, MessageCircle } from "lucide-react";
 
 // Update these to your preferred numbers
 const PHONE_E164 = "+27727389214"; // South Africa +27
@@ -17,7 +17,7 @@ export default function FloatingActions() {
       href: `https://wa.me/${WHATSAPP_E164.replace("+", "")}`,
       label: "WhatsApp",
       color: "bg-green-500 hover:bg-green-600",
-      Icon: MessageCircle,
+  Icon: MessageCircle,
       target: "_blank" as const,
     },
     {
@@ -48,15 +48,13 @@ export default function FloatingActions() {
                 href={href}
                 target={target}
                 rel={target === "_blank" ? "noopener noreferrer" : undefined}
-                className={`group shadow-lg hover:shadow-xl transition-all rounded-full pl-4 pr-2 py-2 flex items-center gap-2 text-white ${color}`}
+                className={`group shadow-lg hover:shadow-xl transition-all rounded-full px-3 py-2 flex items-center gap-2 text-white ${color}`}
                 whileHover={{ y: -2 }}
                 onClick={() => setOpen(false)}
               >
+                <Icon className="w-5 h-5" />
                 <span className="text-sm font-medium hidden sm:inline">{label}</span>
                 <span className="sm:hidden sr-only">{label}</span>
-                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-black/10">
-                  <Icon className="w-5 h-5" />
-                </span>
               </motion.a>
             ))}
           </motion.div>

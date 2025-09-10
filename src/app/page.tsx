@@ -236,7 +236,7 @@ export default function HomePage() {
                   >
                     <Link href="/services">
                       <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-base px-3 md:px-7 py-6 rounded-full">
-                   Services
+                   Explore Services
                       </Button>
                     </Link>
                     <Link href="#contact">
