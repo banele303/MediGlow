@@ -12,7 +12,8 @@ import {
   ArrowRight,
   Shield,
   Heart,
-  Award
+  Award,
+  Crown
 } from "lucide-react";
 import { useEffect, useRef, useState, type MouseEvent as ReactMouseEvent } from "react";
 import Link from "next/link";
@@ -199,7 +200,77 @@ export default function HomePage() {
   return (
     <div className="overflow-hidden">
       {/* Hero Section — light background, right-side image */}
-      <section ref={heroRef} className="relative min-h-[92vh] pt-24 flex items-center skincare-gradient">
+      <section ref={heroRef} className="relative min-h-[92vh] pt-24 flex items-center skincare-gradient overflow-hidden">
+        {/* Animated Background Elements (inspired by Services page) */}
+        <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+          {/* Floating Geometric Shapes */}
+          {[...Array(10)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute opacity-30"
+              initial={{ scale: 0, rotate: 0 }}
+              animate={{
+                scale: [0.6, 1, 0.85, 1],
+                rotate: [0, 180, 360],
+                x: [0, 80, -40, 0],
+                y: [0, -60, 30, 0]
+              }}
+              transition={{
+                duration: 14 + i * 1.7,
+                repeat: Number.POSITIVE_INFINITY,
+                delay: i * 0.35,
+                ease: "easeInOut"
+              }}
+              style={{
+                left: `${8 + (i * 9) % 80}%`,
+                top: `${12 + (i * 11) % 70}%`,
+                width: `${18 + (i * 4) % 36}px`,
+                height: `${18 + (i * 4) % 36}px`,
+                background: `linear-gradient(45deg, 
+                  hsl(${120 + i * 28}, 80%, 70%), 
+                  hsl(${180 + i * 36}, 75%, 72%))`,
+                boxShadow: `0 0 18px hsla(${120 + i * 28}, 80%, 65%, 0.25)`
+              }}
+            />
+          ))}
+
+          {/* Animated Grid Pattern */}
+          <motion.div
+            className="absolute inset-0 opacity-15"
+            animate={{ backgroundPosition: ["0% 0%", "100% 100%"] }}
+            transition={{ duration: 18, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+            style={{
+              backgroundImage: `
+                linear-gradient(rgba(16, 185, 129, 0.35) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(16, 185, 129, 0.35) 1px, transparent 1px)
+              `,
+              backgroundSize: "44px 44px"
+            }}
+          />
+
+          {/* Dynamic Gradient Orbs */}
+          <motion.div
+            className="absolute w-96 h-96 rounded-full blur-3xl"
+            animate={{ x: [0, 80, -80, 0], y: [0, -90, 90, 0], scale: [1, 1.15, 0.9, 1] }}
+            transition={{ duration: 12, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
+            style={{
+              background: "radial-gradient(circle, rgba(16, 185, 129, 0.28) 0%, transparent 70%)",
+              top: "8%",
+              left: "8%"
+            }}
+          />
+          <motion.div
+            className="absolute w-80 h-80 rounded-full blur-3xl"
+            animate={{ x: [0, -120, 120, 0], y: [0, 110, -110, 0], scale: [0.85, 1.25, 0.95, 0.85] }}
+            transition={{ duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut", delay: 2 }}
+            style={{
+              background: "radial-gradient(circle, rgba(59, 130, 246, 0.22) 0%, transparent 70%)",
+              bottom: "12%",
+              right: "12%"
+            }}
+          />
+        </div>
+
         <motion.div style={{ y, opacity }} className="relative z-10 w-full">
           <div className="max-w-7xl mx-auto px-4">
             <motion.div
@@ -216,13 +287,28 @@ export default function HomePage() {
                   animate="show"
                   className="p-0"
                 >
+                  {/* Floating Badge like Services page */}
+                  <motion.div
+                    className="inline-flex items-center space-x-2 px-4 py-2 bg-white/80 backdrop-blur-sm rounded-full shadow-lg border border-emerald-200/50 mb-6"
+                    whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(16, 185, 129, 0.2)" }}
+                    animate={{ y: [0, -4, 0], rotate: [0, 1, -1, 0] }}
+                    transition={{ y: { duration: 3, repeat: Number.POSITIVE_INFINITY }, rotate: { duration: 4, repeat: Number.POSITIVE_INFINITY } }}
+                  >
+                    <motion.div animate={{ rotate: 360 }} transition={{ duration: 8, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}>
+                      <Sparkles className="w-5 h-5 text-emerald-600" />
+                    </motion.div>
+                    <span className="text-sm font-medium text-emerald-800">World-Class Skincare Excellence</span>
+                    <motion.div animate={{ scale: [1, 1.2, 1] }} transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}>
+                      <Crown className="w-4 h-4 text-yellow-500" />
+                    </motion.div>
+                  </motion.div>
                   
                   <motion.h1
                     variants={itemFadeUp}
                     className="text-4xl sm:text-4xl font-bold leading-tight tracking-tight"
                   >
-                    Elevate Your Skin Glow
-                    <span className="block animated-text-gradient">With Confidence</span>
+                    Elevate Your Skin 
+                    <span className="block animated-text-gradient text-2xl">Glow With Confidence</span>
                   </motion.h1>
                   <motion.p
                     variants={itemFadeUp}
@@ -235,9 +321,18 @@ export default function HomePage() {
                     className="mt-8 flex flex-col-2   gap-4"
                   >
                     <Link href="/services">
-                      <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-base px-7 py-6 rounded-full">
-                   Explore Services
-                      </Button>
+                      <motion.div className="relative group inline-block" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                        <Button size="lg" className="relative overflow-hidden bg-emerald-500 hover:bg-emerald-600 text-white text-base px-7 py-6 rounded-full shadow-xl">
+                          {/* Animated shine */}
+                          <motion.div
+                            className="pointer-events-none absolute inset-0 bg-gradient-to-r from-white/0 via-white/25 to-white/0"
+                            initial={{ x: "-100%" }}
+                            animate={{ x: "100%" }}
+                            transition={{ repeat: Number.POSITIVE_INFINITY, duration: 2.8, ease: "easeInOut", repeatDelay: 1.6 }}
+                          />
+                          <span className="relative z-10">Explore Services</span>
+                        </Button>
+                      </motion.div>
                     </Link>
                     <Link href="#contact">
                       <Button variant="outline" size="lg" className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 text-base px-7 py-6 rounded-full">
