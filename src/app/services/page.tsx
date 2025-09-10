@@ -12,7 +12,6 @@ import {
   Zap, 
   ArrowRight,
   Clock,
-  DollarSign,
   Star,
   Check,
   Award,
@@ -1095,7 +1094,6 @@ export default function ServicesPage() {
                                 }}
                                 transition={{ duration: 0.2 }}
                               >
-                                <DollarSign className="w-4 h-4 mr-2" />
                                 <span className="text-sm font-bold">{service.price}</span>
                               </motion.div>
                             </div>
@@ -1268,44 +1266,44 @@ export default function ServicesPage() {
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.1 + 0.8 }}
                       >
-                        <Link href="/contact">
-                          <motion.div
-                            whileHover={{ scale: 1.01 }}
-                            whileTap={{ scale: 0.99 }}
-                            className="relative overflow-hidden rounded-lg group"
-                          >
-                            <Button className="w-full bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 text-white py-2 px-4 text-sm shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
-                              {/* Animated Background Shine */}
-                              <motion.div
-                                className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12"
-                                initial={{ x: '-100%' }}
-                                animate={{ x: '100%' }}
-                                transition={{ 
-                                  repeat: Number.POSITIVE_INFINITY, 
-                                  duration: 3,
-                                  repeatDelay: 2,
-                                  ease: "easeInOut"
-                                }}
-                              />
-                              
-                              <motion.span
-                                className="flex items-center justify-center relative z-10 font-medium"
-                                whileHover={{ x: -3 }}
-                                transition={{ duration: 0.2 }}
-                              >
-                                Book Treatment
-                              </motion.span>
-                              
-                              <motion.div
-                                animate={{ x: [0, 3, 0] }}
-                                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                                className="relative z-10"
-                              >
-                                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                              </motion.div>
-                            </Button>
-                          </motion.div>
-                        </Link>
+                        {(() => {
+                          const waText = encodeURIComponent(`Hi GlowSkin, I'd like to book the ${service.title} treatment.`);
+                          const waHref = `https://wa.me/27727389214?text=${waText}`;
+                          return (
+                            <motion.div
+                              whileHover={{ scale: 1.01 }}
+                              whileTap={{ scale: 0.99 }}
+                              className="relative overflow-hidden rounded-lg group"
+                            >
+                              <Button asChild className="w-full bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 text-white py-2 px-4 text-sm shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden group">
+                                <a href={waHref} target="_blank" rel="noopener noreferrer">
+                                  {/* Animated Background Shine */}
+                                  <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 transform -skew-x-12"
+                                    initial={{ x: '-100%' }}
+                                    animate={{ x: '100%' }}
+                                    transition={{ 
+                                      repeat: Number.POSITIVE_INFINITY, 
+                                      duration: 3,
+                                      repeatDelay: 2,
+                                      ease: "easeInOut"
+                                    }}
+                                  />
+                                  <span className="flex items-center justify-center relative z-10 font-medium">
+                                    Book Treatment
+                                    <motion.span
+                                      animate={{ x: [0, 3, 0] }}
+                                      transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
+                                      className="ml-2 inline-flex"
+                                    >
+                                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                    </motion.span>
+                                  </span>
+                                </a>
+                              </Button>
+                            </motion.div>
+                          );
+                        })()}
                       </motion.div>
                     </div>
                   </CardContent>
