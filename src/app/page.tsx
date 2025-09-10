@@ -219,10 +219,10 @@ export default function HomePage() {
                   
                   <motion.h1
                     variants={itemFadeUp}
-                    className="text-4xl sm:text-6xl font-bold leading-tight tracking-tight"
+                    className="text-4xl sm:text-4xl font-bold leading-tight tracking-tight"
                   >
-                    Elevate Your Skin
-                    <span className="block animated-text-gradient">Glow With Confidence</span>
+                    Elevate Your Skin Glow
+                    <span className="block animated-text-gradient">With Confidence</span>
                   </motion.h1>
                   <motion.p
                     variants={itemFadeUp}
@@ -235,12 +235,12 @@ export default function HomePage() {
                     className="mt-8 flex flex-col-2   gap-4"
                   >
                     <Link href="/services">
-                      <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-base px-3 md:px-7 py-6 rounded-full">
+                      <Button size="lg" className="bg-emerald-500 hover:bg-emerald-600 text-white text-base px-7 py-6 rounded-full">
                    Explore Services
                       </Button>
                     </Link>
                     <Link href="#contact">
-                      <Button variant="outline" size="lg" className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 text-base px-3 md:px-7 py-6 rounded-full">
+                      <Button variant="outline" size="lg" className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 text-base px-7 py-6 rounded-full">
                         Book a Consultation
                       </Button>
                     </Link>
