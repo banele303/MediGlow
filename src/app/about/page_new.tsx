@@ -11,7 +11,6 @@ import {
   Leaf,
   Shield,
   ArrowRight,
-  CheckCircle,
   Star,
   Calendar,
   Phone,
@@ -130,7 +129,7 @@ export default function AboutPage() {
               </h1>
               
               <p className="text-xl text-gray-600 leading-relaxed">
-                We're passionate about helping you achieve your best skin. Our expert team combines 
+                We&apos;re passionate about helping you achieve your best skin. Our expert team combines 
                 years of experience with the latest skincare innovations to deliver exceptional results.
               </p>
 
@@ -223,9 +222,9 @@ export default function AboutPage() {
             <Card className="bg-white shadow-lg border-0">
               <CardContent className="p-12">
                 <p className="text-xl md:text-2xl text-gray-700 leading-relaxed italic">
-                  "To empower every person to feel confident in their skin by providing 
+                  &quot;To empower every person to feel confident in their skin by providing 
                   personalized, professional skincare treatments that deliver real, 
-                  lasting results."
+                  lasting results.&quot;
                 </p>
                 <div className="text-emerald-600 font-semibold mt-6">
                   — The GlowSkin Promise
@@ -295,7 +294,7 @@ export default function AboutPage() {
               Our Journey
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From a small startup to a trusted skincare destination, here's how we've grown.
+              From a small startup to a trusted skincare destination, here&apos;s how we&apos;ve grown.
             </p>
           </motion.div>
 

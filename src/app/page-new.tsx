@@ -287,7 +287,7 @@ export default function HomePage() {
                       ))}
                     </div>
                     <p className="text-gray-700 text-lg leading-relaxed italic">
-                      "{testimonial.content}"
+                      &quot;{testimonial.content}&quot;
                     </p>
                     <div className="border-t border-gray-200 pt-6">
                       <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>

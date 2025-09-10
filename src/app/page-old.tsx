@@ -11,33 +11,37 @@ import {
   Calendar,
   ArrowRight,
   Shield,
-  Heart,
   Zap,
-  Award
+  CheckCircle,
+  Leaf,
+  Beaker,
+  ClipboardCheck,
+  HeartPulse
 } from "lucide-react";
 import { useRef } from "react";
 import Link from "next/link";
 
-const services = [
-  {
-    icon: Sparkles,
-    title: "Facial Treatments",
-    description: "Professional deep cleansing and rejuvenating facials for all skin types."
-  },
+// Feature highlights displayed in the Features section
+const features = [
   {
     icon: Shield,
-    title: "Anti-Aging",
-    description: "Advanced treatments to reduce fine lines and restore youthful appearance."
+    title: "Safe for all skin",
+    description: "Clinically guided treatments designed for sensitive to resilient skin types."
   },
   {
-    icon: Heart,
-    title: "Skin Health",
-    description: "Comprehensive skin analysis and personalized treatment plans."
+    icon: Sparkles,
+    title: "Visible results",
+    description: "Target discoloration, texture, and dullness with measurable improvements."
   },
   {
-    icon: Zap,
-    title: "Quick Treatments",
-    description: "Express services perfect for busy schedules with immediate results."
+    icon: ClipboardCheck,
+    title: "Expert plans",
+    description: "Personalized care plans to match your goals and lifestyle."
+  },
+  {
+    icon: HeartPulse,
+    title: "Gentle & effective",
+    description: "Comfortable sessions with minimal downtime and long‑lasting results."
   }
 ];
 
@@ -356,7 +360,7 @@ export default function HomePage() {
                       ))}
                     </div>
                     <p className="text-gray-700 text-lg leading-relaxed italic">
-                      "{testimonial.content}"
+                      &quot;{testimonial.content}&quot;
                     </p>
                     <div className="border-t border-gray-200 pt-6">
                       <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>

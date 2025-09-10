@@ -12,7 +12,6 @@ import {
   Send, 
   MessageSquare,
   Globe,
-  Wifi,
   Zap,
   Users,
   Shield,
@@ -575,7 +574,7 @@ export default function ContactPage() {
             </h2>
             
             <p className="text-xl text-white/80 mb-12 max-w-2xl mx-auto">
-              Don't wait for the future - experience it today. Book your quantum suite 
+              Don&apos;t wait for the future - experience it today. Book your quantum suite 
               and step into tomorrow.
             </p>
 

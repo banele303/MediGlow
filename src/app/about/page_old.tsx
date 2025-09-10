@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { 
@@ -8,17 +8,18 @@ import {
   Users, 
   Award, 
   Heart,
-  Leaf,
   Shield,
   ArrowRight,
   CheckCircle,
   Star,
   Calendar,
-  Phone,
-  Mail
+  Brain,
+  Globe,
+  Trophy
+  
 } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import { useRef } from "react";
 
 const milestones = [
   {
@@ -174,7 +175,7 @@ export default function AboutPage() {
             <p className="text-xl md:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
               Born from a vision to revolutionize hospitality, Glow Suite stands at the 
               intersection of cutting-edge technology and unparalleled luxury, creating 
-              experiences that redefine what's possible.
+              experiences that redefine what&apos;s possible.
             </p>
           </motion.div>
         </div>
@@ -203,9 +204,9 @@ export default function AboutPage() {
                     transition={{ delay: 0.3 }}
                     viewport={{ once: true }}
                   >
-                    "To bridge the gap between today's hospitality and tomorrow's possibilities, 
+                    &quot;To bridge the gap between today&apos;s hospitality and tomorrow&apos;s possibilities, 
                     creating immersive experiences that inspire, amaze, and elevate the human spirit 
-                    through the thoughtful integration of revolutionary technology."
+                    through the thoughtful integration of revolutionary technology.&quot;
                   </motion.p>
                   
                   <motion.div
@@ -388,7 +389,7 @@ export default function AboutPage() {
               VISIONARY TEAM
             </h2>
             <p className="text-xl text-white/70 max-w-3xl mx-auto">
-              Meet the brilliant minds behind Glow Suite's revolutionary approach to luxury hospitality.
+              Meet the brilliant minds behind Glow Suite&apos;s revolutionary approach to luxury hospitality.
             </p>
           </motion.div>
 
