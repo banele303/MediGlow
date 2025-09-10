@@ -26,7 +26,7 @@ import {
   AlertCircle,
   Gift
 } from "lucide-react";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 const rooms = [
@@ -127,7 +127,7 @@ const steps = [
   { id: 6, title: "Confirmation", description: "Booking complete" }
 ];
 
-export default function BookingPage() {
+function BookingPageContent() {
   const [currentStep, setCurrentStep] = useState(1);
   const [selectedRoom, setSelectedRoom] = useState<number | null>(null);
   const [checkIn, setCheckIn] = useState("");
@@ -942,5 +942,14 @@ export default function BookingPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function BookingPage() {
+  // Wrap the content in Suspense so hooks like useSearchParams are allowed
+  return (
+    <Suspense fallback={<div className="min-h-screen pt-20 flex items-center justify-center text-white/70">Loading booking…</div>}>
+      <BookingPageContent />
+    </Suspense>
   );
 }
