@@ -312,7 +312,7 @@ export default function HomePage() {
                   </motion.h1>
                   <motion.p
                     variants={itemFadeUp}
-                    className="mt-6 text-gray-600 text-lg sm:text-xl max-w-2xl"
+                    className="hidden lg:block mt-6 text-gray-600 text-lg sm:text-xl max-w-2xl"
                   >
                     Bespoke treatments and expert care designed for deep results. Experience a modern approach to healthy, radiant skin.
                   </motion.p>
